@@ -25,7 +25,7 @@ class Desc_Movie extends StatelessWidget{
                       child: Container(
                       height: 250,
                       width: MediaQuery.of(context).size.width,
-                        child: Image.network(bannerUrl,fit: BoxFit.cover,),
+                        child: Image.network(bannerUrl,),
                     )
                   ),
 
@@ -45,7 +45,7 @@ class Desc_Movie extends StatelessWidget{
             //comtainerr for movie name
             Container(
               padding: EdgeInsets.all(20),
-              child: ModifiedText(text: name!=null?name:"404", color: Colors.white70, size: 24),
+              child: ModifiedText(text: name.toString()!=null?name.toString():"404", color: Colors.white70, size: 24),
             ),
 
             //container for launch date
@@ -59,7 +59,7 @@ class Desc_Movie extends StatelessWidget{
 
                 //container for poster
                 Container(
-                  margin: EdgeInsets.all(5),
+                  margin: EdgeInsets.all(10),
                   height: 200,
                   width: 100,
                   child: Image.network(posterUrl),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:descmovies/home.dart';
+import 'package:descmovies/utils/text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -60,11 +61,24 @@ class _SplashState extends State<Splash> {
           child: Container(
             color: Colors.amberAccent,
             child: Center(
-              child: Icon(FontAwesomeIcons.tv,
-              size: 70,
-              color: Colors.black,),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(FontAwesomeIcons.tv,
+                  size: 70,
+                  color: Colors.black,
+                ),
+
+                  SizedBox(
+                    height: 15,
+                  ),
+
+                  ModifiedText(text: "🎥The perfect film is just a tap away!", color: Colors.black, size: 20)
+                ] 
+              ),
             ),
-          )),
+          )
+      ),
     );
   }
 }

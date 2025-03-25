@@ -35,7 +35,9 @@ class Top_Rated extends  StatelessWidget{
                                   image: DecorationImage(
                                     image: NetworkImage(
                                         'https://image.tmdb.org/t/p/w500' +
-                                            top_rated[index]['poster_path']),
+                                            top_rated[index]['poster_path']!=null? 'https://image.tmdb.org/t/p/w500' +
+                                            top_rated[index]['poster_path']:"load_"
+                                    ),
                                   ),
                                 ),
                               ),
@@ -43,7 +45,7 @@ class Top_Rated extends  StatelessWidget{
                               //names container
                               Container(
                                 child: ModifiedText(text: top_rated[index]['title']!=null?top_rated[index]['title']:"Loading",
-                                    color: Colors.black, size: 10),
+                                    color: Colors.white, size: 10),
                               )
                             ],
                           ),

@@ -49,8 +49,8 @@ class _HomeState extends State<Home> {
 
     //loading movies
     setState(() {
-      //trendingmovies=trendingresult['results'];
-      //topratedmovies=topratedresult['results'];
+      trendingmovies=trendingresult['results'];
+      topratedmovies=topratedresult['results'];
       tvshows=tvshowsresult['results'];
     });
   }
@@ -70,7 +70,6 @@ class _HomeState extends State<Home> {
           TV(tv: tvshows),
           TrendingMovies(trending: trendingmovies),
           //Top_Rated(top_rated: topratedmovies)
-
         ],
       )
     );

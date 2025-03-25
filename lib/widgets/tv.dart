@@ -29,14 +29,15 @@ class TV extends StatelessWidget{
                     return InkWell(
                       //open description window ontap
                       onTap: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>Desc_Movie(
-                          //   name: tv[index]['original_name'],
-                          //   description:tv[index]['overview'] ,
-                          //   bannerUrl: 'https://image.tmdb.org/t/p/w500'+tv[index]['backdrop_path'],
-                          //   posterUrl: 'https://image.tmdb.org/t/p/w500'+tv[index]['poster_path'],
-                          //   launchOn: tv[index]['release_date'],
-                          //   voting: tv[index]['vote_average'].toString(),
-                          // )));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Desc_Movie(
+                            name: tv[index]['original_name'].toString()!=null?tv[index]['original_name'].toString():"load",
+                            description:tv[index]['overview'].toString()!=null?tv[index]['overview'].toString():"load",
+                            bannerUrl: 'https://image.tmdb.org/t/p/w500'+tv[index]['backdrop_path'].toString()!=null?'https://image.tmdb.org/t/p/w500'+tv[index]['backdrop_path'].toString():"404 not found"
+                                "",
+                            posterUrl: 'https://image.tmdb.org/t/p/w500'+tv[index]['poster_path'].toString(),
+                            launchOn: tv[index]['release_date'].toString()!=null? tv[index]['release_date'].toString():"load",
+                            voting: tv[index]['vote_average'].toString()!=null?tv[index]['vote_average'].toString():"load",
+                          )));
                       },
                       child: Container(
                         padding: EdgeInsets.all(5),
